@@ -57,15 +57,9 @@ app.post("/", (req, res) => {
   request.end();
 });
 
-<<<<<<< HEAD
-app.post('/failure', (req,res) => {
-  res.redirect('/');
-})
-=======
 
 app.post("/failure", (req, res) => {
   res.redirect("/");
 });
->>>>>>> 5dc8e6a4ff1c208c9a8eb65034b6c68cda595c8d
 
 app.listen(process.env.PORT || 4800, () => console.log('server @4800'))

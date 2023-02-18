@@ -42,7 +42,7 @@ app.post("/", (req, res) => {
 
   const request = https.request(url, options, (response) =>{
         
-        response.statusCode == 200
+        response.statusCode === 200
           ? res.sendFile(__dirname + "/success.html")
           : res.sendFile(__dirname + "/failure.html");
 
@@ -56,8 +56,9 @@ app.post("/", (req, res) => {
   request.end();
 });
 
-app.get('/failure', (req,res) => {
-  res.redirect('/');
-})
+
+app.post("/failure", (req, res) => {
+  res.redirect("/");
+});
 
 app.listen(process.env.PORT || 4800, () => console.log('server @4800'))
